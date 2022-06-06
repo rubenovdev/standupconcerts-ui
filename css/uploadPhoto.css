@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    list-style: none;
+    font-family:'gilroy';
+
+}
+@font-face{
+    font-family:'gilroy';
+    src:url('./fonts/gilroy.ttf')
+}
+
+@font-face{
+    font-family:'gilroy';
+    src:url('./fonts/gilroyultra.ttf')
+}
+
+@font-face{
+    font-family:'Bebes';
+    src:url('./fonts/bebesNeue.ttf')
+}
+
+@font-face{
+    font-family:'GraphikLight';
+    src:url('./fonts/Graphik-Regular.ttf')
+}
+
+@font-face{
+    font-family:'GraphikBold';
+    src:url('./fonts/Graphik-Bold.ttf')
+}
+.par{
+    width: 408px;
+    min-height: 291px;
+    background-color: #292929;
+    border-radius: 12px;
+    margin: 175px auto 0;
+}
+.par div{
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px ;
+}
+.txt1{
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+.txt2{
+    margin: 0 auto;
+    padding: 15px 0 29px;
+    text-align: center;
+    width: 259px;
+    opacity: .4;
+}
+button{
+    padding: 11px 55px;
+    background-color: rgba(209,47,39,0.3);
+    border-radius: 6px;
+    border:1px solid transparent;
+    display: block;
+    margin: 0 auto;
+    color: white;
+}
+body{
+    background-color: #17191C;
+}
