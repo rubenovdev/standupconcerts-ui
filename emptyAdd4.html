@@ -6,59 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/EmptyAdd1.css">
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="burger__menu">
-            <h4>Мой профиль</h4>
-            <ul class="burger__ul">
-                <li><a href="#">Настройки</a></li>
-                <li><a href="emptyAdd1.html">Подписки</a></li>
-                <li><a href="emptyAdd2.html">Избранные выступления</a></li>
-                <li><a href="emptyAdd3.html">Любимые комики</a></li>
-                <li><a href="comic.html">Личный кабинет комика</a></li>
+    <div class="burger__menu">
+        <h4>Мой профиль</h4>
+        <ul class="burger__ul">
+            <li><a href="#">Настройки</a></li>
+            <li><a href="emptyAdd1.html">Подписки</a></li>
+            <li><a href="emptyAdd2.html">Избранные выступления</a></li>
+            <li><a href="emptyAdd3.html">Любимые комики</a></li>
+            <li><a href="comic.html">Личный кабинет комика</a></li>
 
-            </ul>
-            <img src="img/x.png" class='close'>
-        </div>
+        </ul>
+        <img src="img/x.png" class='close'>
+    </div>
+    <div class="wrapper wrapper1">
+
         <header>
-            <div class="container">
-                <div class="containerMain">
-
-                    <div class="header__logo">
-                        <a href="index.html">
-                            <span class="stand stand1">STAND UP</span> <br>
-                            <span class="concert">CONCERTS</span>
-                        </a>
-                    </div>
-                    <ul class="nav">
-                        <li class='DnoneLi'><a href="./index.html" >Главная</a></li>
-                        <li class='DnoneLi'><a href="./catalog.html">Каталог</a></li>
-                        <li class='DnoneLi'><a href="#">Коллекции</a></li>
-                        <li class='searchdrop'>
-                            <img src="img/search.png" class="whiteimg" alt="">
-                            <img src="./img/searchred.png" class="redimg"  alt="">
-                            <input type="search"  class="class" placeholder="Поиск">
-                            </li>
-                    </ul>
-                    <a href="#" class="myCabinet"><span>Личный кабинет</span> <img class="DnoneImg"
-                            src="./img/lichni.png"></a>
-                    <div class="burger">
-                        <img src="img/rect1.png" alt="">
-                        <img src="img/rect1.png" alt="">
-                        <img src="img/rect2.png" alt="">
-                    </div>
-                </div>
+            <div class="header__logo">
+                <a href="index.html">
+                    <img src="./img/iconSite.png" alt="">
+                </a>
+            </div>
+            <ul class="nav">
+                <li><a class="willnone" href="./index.html">Главная</a></li>
+                <li><a class="willnone" href="./catalog.html" style="color:#FF6A63">Каталог</a></li>
+                <li><a class="willnone" href="#">Коллекции</a></li>
+                <li class='searchdrop'>
+                    <img src="img/search.png" class="whiteimg" alt="">
+                    <img src="./img/searchred.png" class="redimg" alt="">
+                    <input type="search" class="class" placeholder="Поиск">
+                </li>
+            </ul>
+            <a href="#" class="myCabinet"><span>Личный кабинет</span> <img class="DnoneImg"
+                    src="./img/lichni.png"></a>
+            <div class="burger">
+                <img src="img/rect1.png" alt="">
+                <img src="img/rect1.png" alt="">
+                <img src="img/rect2.png" alt="">
             </div>
         </header>
     </div>
-    <section id="sec1">
-        <div class="container">
+    <section id="Addsec1">
+        <div class="containerAdds">
             <div class="cabinetPar">
 
-                <div class="cabinetmain">
+                <div class="cabinetmain" style="background: linear-gradient(#1C1E21, #2C2E31 90%);">
                     <div class="cabinet">
                         <div class="cabinet__content">
                             <p class="sec1Txt1">Stand Up Concerts/<span class="sec1Txt1_1">Комики</span></p>
@@ -77,8 +72,8 @@
 
                 <div class="cabinet__login">
                     <h2>Сохраненные видео</h2>
-                    <p>Список сохраненных видео</p>
-                    <div class="info1">
+                    <p class="cabLogP">Список сохраненных видео</p>
+                    <div class="info2">
                         <img src="img/arxiv.png" alt="">
                         <p>Скачивайте любимые выступления  — список появятся здесь</p>
 
@@ -93,30 +88,25 @@
 
     </section>
     <footer>
-        <div class="container">
-
-            <div class="footer__container">
-                <div class="header__logo">
-                    <a href="index.html">
-                        <span class="stand">STAND UP</span> <br>
-                        <span class="concert">CONCERTS</span>
-                    </a>
-                </div>
-                <ul class="nav2">
-                    <li><a href="./index.html">Главная</a></li>
-                    <li><a href="./catalog.html">Каталог</a></li>
-                    <li><a href="#">Коллекции</a></li>
-                </ul>
-                <a href="#">
-                    <div class="vk">
-                        <img src="img/vk.png" alt="">
-                    </div>
+        <div class="footer__container">
+            <div class="header__logo">
+                <a href="index.html">
+                    <img src="./img/iconSite.png" alt="">
                 </a>
             </div>
+            <ul class="nav">
+                <li><a href="#">Главная</a></li>
+                <li><a style="color:#FF6A63" href="catalog.html">Каталог</a></li>
+                <li><a href="#">Коллекции</a></li>
+            </ul>
+            <a href="#">
+                <div class="vk">
+                    <img src="img/vk.png" alt="">
+                </div>
+            </a>
         </div>
-
     </footer>
-    <script src="script/favorite.js"></script>
+    <script src="./script/favorite.js"></script>
 </body>
 
 </html>

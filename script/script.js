@@ -6,42 +6,40 @@ const search = document.querySelector('.class');
 const redimg = document.querySelector('.redimg')
 const whiteimg = document.querySelector('.whiteimg')
 const loading = document.querySelector('.onload')
-redimg.style.display = 'none';
-whiteimg.style.display = 'block'
+// whiteimg.style.display = 'block'
 document.body.addEventListener('click', () => {
-    redimg.style.display = 'none';
-    whiteimg.style.display = 'block'
-    searchdrop.style.border = '1px solid  transparent'
+    searchdrop.classList.remove('borderSolidOrange')
+    redimg.classList.add('displayNone')
+    whiteimg.classList.add('displayBlock')
+    searchdrop.classList.add('borderTransparent')
     search.placeholder = 'Поиск'
-    return false
+    return false;
 
 
 })
-document.body.onload = ()=>{
-    setTimeout(()=>{
-    loading.style.display='none';
-    },800)
+document.onload = ()=>{
+    loading.classList.add('onloadAnim')
 }
 burger.addEventListener('click',()=>{
-    menu.style.display = 'block';
+    menu.classList.add('displayBlock')
     setTimeout(()=>{
-        menu.style.right = '0';
+        menu.classList.add('Right0')
         
     },100)
 })
 
 closeX.addEventListener('click',()=>{
-    menu.style.right = '-100%';
+    menu.classList.remove('Right0')
     setTimeout(()=>{
-       menu.style.display = 'none'; 
+       menu.classList.remove('displayBlock') 
     },500)
 })
 searchdrop.onclick = () => {
     setTimeout(() => {
-    
-        searchdrop.style.border = '1px solid #FF6A63'
-        redimg.style.display = 'block'
-        whiteimg.style.display = 'none'
+        searchdrop.classList.remove('borderTransparent')
+        searchdrop.classList.add('borderSolidOrange')
+        redimg.classList.remove('displayNonedisplayBlock')
+        whiteimg.classList.remove('displayBlock')
         search.placeholder = 'Введите название'
 }, 100);
 }

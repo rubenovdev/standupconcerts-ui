@@ -1,111 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./style/style.css">
 </head>
+
 <body id="body">
-  <div class="burger__menu">
-    <h4>Мой профиль</h4>
-      <ul class="burger__ul">
-          <li><a href="#">Настройки</a></li>
-          <li><a href="emptyAdd1.html">Подписки</a></li>
-          <li><a href="emptyAdd2.html">Избранные выступления</a></li>
-          <li><a href="emptyAdd3.html">Любимые комики</a></li>
-          <li><a href="comic.html">Личный кабинет комика</a></li>
-          <li><a href="emptyAdd4.html">Сохраненные видео</a></li>
-      </ul>
-      <img src="img/x.png" class='close'>
-  </div>
- <div class="wrapper">
-<header>
-        <div class="header__logo">
-            <a href="index.html">
-                <span class="stand">STAND UP</span> <br>
-                <span class="concert">CONCERTS</span>
-            </a>
-        </div>
-        <ul class="nav">
-            <li><a href="#" style="color:#FF6A63">Главная</a></li>
-            <li><a href="./catalog.html">Каталог</a></li>
-            <li><a href="#">Коллекции</a></li>
-            <li class='searchdrop'>
-                <img src="img/search.png" class="whiteimg" alt="">
-                <img src="./img/searchred.png" class="redimg"  alt="">
-                <input type="search"  class="class" placeholder="Поиск">
-                </li>
+    <div class="burger__menu">
+        <h4>Мой профиль</h4>
+        <ul class="burger__ul">
+            <li><a href="#">Настройки</a></li>
+            <li><a href="emptyAdd1.html">Подписки</a></li>
+            <li><a href="emptyAdd2.html">Избранные выступления</a></li>
+            <li><a href="emptyAdd3.html">Любимые комики</a></li>
+            <li><a href="comic.html">Личный кабинет комика</a></li>
+            <li><a href="emptyAdd4.html">Сохраненные видео</a></li>
         </ul>
-        <a href="#" class='go'>Войти</a>
-    <div class="burger">
-        <img src="img/rect1.png" alt="">
-        <img src="img/rect1.png" alt="">
-        <img src="img/rect2.png" alt="">
+        <img src="img/x.png" class='close'>
     </div>
-    </header>
-    <div class="register">
-        <h2>Вход в аккаунт</h2>
-        <p>Войдите для просмотра и загрузки любимых стендап выступлений</p>
-        
-        <form action="#">
-            <input type="email" placeholder="E-mail или телефон">
-            <div class="input">
-            <input type="password" placeholder="Пароль" maxlength="6" style="margin-top: 18px;margin-bottom: 8px" id="pass">
-            <img src="img/eye.png" alt="" id="eye">
+    <div class="wrapper">
+        <header>
+            <div class="header__logo">
+                <a href="index.html">
+                    <img src="./img/iconSite.png" alt="">
+                </a>
             </div>
-            <a href='#body' style="cursor: pointer; color: white;" id="remember">Забыли пароль?</a>
-            <button class="wrapper__button" style='margin: 20px 0 22px'>Войти</button>
-            <p>Или войдите с помощью социальных сетей</p>
-            <div class="social">
-                <a href="#">
+            <ul class="nav">
+                <li class="willnone"><a href="#" style="color:#FF6A63">Главная</a></li>
+                <li class="willnone"><a href=".//catalog.html">Каталог</a></li>
+                <li class="willnone"><a href="#">Коллекции</a></li>
+                <li class='searchdrop'>
+                    <img src="img/search.png" class="whiteimg" alt="">
+                    <img src="./img/searchred.png" class="redimg" alt="">
+                    <input type="search" class="class" placeholder="Поиск">
+                </li>
+            </ul>
+            <a href="#" class='go'>Войти</a>
+            <div class="burger">
+                <img src="img/rect1.png" alt="">
+                <img src="img/rect1.png" alt="">
+                <img src="img/rect2.png" alt="">
+            </div>
+        </header>
+        <div class="register">
+            <h2>Вход в аккаунт</h2>
+            <p class="ResetMinTxt">Войдите для просмотра и загрузки любимых стендап выступлений</p>
+
+            <form action="#">
+                <input type="email" placeholder="E-mail или телефон">
+                <div class="input">
+                    <input type="password" placeholder="Пароль" maxlength="6"
+                        style="margin-top: 18px;margin-bottom: 18px" id="pass">
+                    <img src="img/eye.png" alt="" id="eye">
+                </div>
+                <a href='#body' class="forgotStand" id="remember">Забыли пароль?</a>
+                <button class="wrapper__button" style='margin: 10px 0 21px'>Войти</button>
+                <p class="registerStand2">Или войдите с помощью социальных сетей</p>
+                <div class="social">
+                    <a href="#">
+                        <div class="vk">
+                            <img src="img/vk.png" alt="">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="vk">
+                            <img src="img/yandex.png" alt="">
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="vk">
+                            <img src="img/google.png" alt="">
+                        </div>
+                    </a>
+                </div>
+                <p class="notAc" style='margin-top: 22px;'>Ещё нет аккаунта? <a href="register.html"
+                        style="color: #FF6A63; ">Зарегистрируйтесь!</a></p>
+            </form>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <div class="footer__container">
+            <div class="header__logo">
+                <a href="index.html">
+                    <img src="./img/iconSite.png" alt="">
+                </a>
+            </div>
+            <ul class="nav">
+                <li><a href="#" style="color:#FF6A63">Главная</a></li>
+                <li><a href="#">Каталог</a></li>
+                <li><a href="#">Коллекции</a></li>
+            </ul>
+            <a href="#">
                 <div class="vk">
                     <img src="img/vk.png" alt="">
                 </div>
-                 </a>
-               <a href="#"><div class="vk">
-                    <img src="img/yandex.png" alt="">
-                </div>
-                </a> 
-                <a href="#">
-                <div class="vk">
-                    <img src="img/google.png" alt="">
-                </div>
-               </a>
-            </div>
-            <p style='margin-top: 22px;'>Ещё нет аккаунта? <a href="register.html" style="color: #FF6A63; ">Зарегиртрируйтесь</a></p>
-        </form>
-    </div>
-    </div>
-    
-
-    
-    <footer>
-        <div class="footer__container">
-        <div class="header__logo">
-            <a href="index.html">
-                <span class="stand">STAND UP</span> <br>
-                <span class="concert">CONCERTS</span>
             </a>
         </div>
-        <ul class="nav">
-            <li><a href="#" style="color:#FF6A63">Главная</a></li>
-            <li><a href="#">Каталог</a></li>
-            <li><a href="#">Коллекции</a></li>
-        </ul>
-        <a href="#">
-        <div class="vk">
-            <img src="img/vk.png" alt="">
-        </div>
-        </a>
-        </div>
     </footer>
-    
+
     <div class="resetpass">
         <div class="resetpassword">
             <h2>Забыли пароль?</h2>
-            <p>Пажалуйста, укажите e-mail, который <br> вы испоьзовали при регистрации</p>
+            <p >Пажалуйста, укажите e-mail, который <br> вы испоьзовали при регистрации</p>
             <input type="email" style="background: #212121" placeholder="E-mail">
-            <button class="wrapper__button" style="margin-top: 12px;margin-bottom: 0;">Сбросить пароль</button>
+            <button class="wrapper__button" style="margin-top: 12px;width:288px; margin-bottom: 0;">Сбросить
+                пароль</button>
             <img src="img/x.png" alt="close" class="close">
         </div>
         <div class="emailmess">
@@ -114,6 +120,7 @@
         </div>
     </div>
     <!-- <script src="script.js"></script> -->
-    <script src="script/login.js"></script>
+    <script src="./script/login.js"></script>
 </body>
+
 </html>

@@ -5,92 +5,94 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/popUp.css">
+    <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css" integrity="sha384-zIaWifL2YFF1qaDiAo0JFgsmasocJ/rqu7LKYH8CoBEXqGbb9eO+Xi3s6fQhgFWM" crossorigin="anonymous">
 </head>
-<body>
+<body style="background-color: #17191C;">
     <div class="container">
-        <div class="par">
-            <div>
-                <img src="./img/x.png" alt="">
+        <div class="par parmargin">
+            <div class="PaddingX">
+                <img src="./img/x.png" alt="" >
             </div>
-            <p class="txt1">Загрузка в мои выступления</p>
-            <p class="txt2">Чтобы начать загрузку, выберите файл на компьютере</p>
-            <button class="gray">Добавить с YouTube</button>
+            <p class="ParTxt1">Загрузка в мои выступления</p>
+            <p class="ParTxt2" style="padding: 20px 0;">Чтобы начать загрузку, выберите файл на компьютере</p>
+            <button class="parButton" style="background-color: #555555; padding: 11px 40px;">Добавить с YouTube</button>
             <div class="or">
-                <span class="line"></span>
+                <img src="./img/line1.png" alt="">
                 <span>или</span>
-                <span class="line"></span>
+                <img src="./img/line1.png" alt="">
             </div>
-            <button class="red">Выбрать файл</button>
+            <button class="parButton red">Выбрать файл</button>
 
         </div>
-        <div class="par">
-            <div>
+        <div class="par parmargin" style="height: 194px;">
+            <div class="PaddingX">
                 <img src="./img/x.png" alt="">
             </div>
-            <p class="txt1">Удалить видео?</p>
-            <p class="txt2"><input type="checkbox">Чтобы начать загрузку, выберите файл на компьютере</p>
-            <button >Удалить видео</button>
+            <p class="ParTxt1">Удалить видео?</p>
+            <p class="ParTxt2 parCheck" style="padding: 14px 0 22px;"><input type="checkbox">Я понимаю, что отменить <br> это действие нельзя</p>
+            <button  class="parButton">Удалить видео</button>
         </div>
-        <div class="par2">
-            <div>
+        <div class="par parmargin parwidth" style='height: 269px'> 
+            <div class="PaddingX">
                 <img src="./img/x.png" alt="">
             </div>
-            <p class="par2Txt1">Ссылка на видео</p>
-            <input type="text" placeholder="https://">
-            <p class="par2Txt2">Вы можете указать ссылку YouTube</p>
-            <button >Загрузить</button>
+            <p class="ParTxt1 linkVideo" style='font-family: "gilroyultra";'>Ссылка на видео</p>
+            <input type="text" placeholder="https://" class="parInput">
+            <p class="ParTxt2 nowidth">Вы можете указать ссылку YouTube</p>
+            <button class="parButton parbtn">Загрузить</button>
         </div>
 
-        <div class="par3">
-            <div class="x">
+        <div class="par parmargin parwidth loadpar">
+            <div class="PaddingX">
                 <img src="./img/x.png" alt="">
             </div>
-            <div class="main">
-                <p>Загружено <b>37%</b></p>
+            <div class="mainLoad">
+                <p class='ParTxt1 linkVideo' style="font-family: 'gilroyultra';">Загружено <b>37%</b></p>
                 <div class="loading">
                     <div class="loadingLine"></div>
                 </div>
-                <p style="padding: 27px 0 14px;">Название (обязательное поле)</p>
+                <p class="ParTxt1 linkVideo" style="padding: 27px 0 14px; font-family: 'gilroyultra'">Название (обязательное поле)</p>
+                <form action="">
                 <input type="text" placeholder="Добавьте название">
-                <p style="padding: 14px 0;">Описание</p>
-                <input type="text" class="inp2" placeholder="Добавьте описание">
-                <button >Опубликовать</button>
-              
+                <p style="padding: 14px 0; font-family: 'gilroyultra'" class="ParTxt1 linkVideo">Описание</p>
+                <input type="text" class="textArea" placeholder="Добавьте описание">
+                <button class="parButton parbtn" style="margin-top: 14px">Опубликовать</button>
+              </form>
             </div>
         </div>
-        <div class="par3">
-            <div class="x">
+    <div class="par parmargin parwidth loadpar">
+            <div class="PaddingX">
                 <img src="./img/x.png" alt="">
             </div>
-            <div class="main">
-                <p>Готово</p>
+            <div class="mainLoad">
+                <p class='ParTxt1 linkVideo' style="font-family: 'gilroyultra';">Готово</p>
                 <div class="loading">
-                    <div style="width: 100%;" class="loadingLine"></div>
+                    <div class="loadingLine" style="width: 100%"></div>
                 </div>
-                <p style="padding: 27px 0 14px;">Название (обязательное поле)</p>
+                <p class="ParTxt1 linkVideo" style="padding: 27px 0 14px; font-family: 'gilroyultra'">Название (обязательное поле)</p>
+                <form action="">
                 <input type="text" placeholder="Добавьте название">
-                <p style="padding: 14px 0;">Описание</p>
-                <input type="text" class="inp2" placeholder="Добавьте описание">
-                <button >Опубликовать</button>
-              
+                <p style="padding: 14px 0; font-family: 'gilroyultra'" class="ParTxt1 linkVideo">Описание</p>
+                <input type="text" class="textArea" placeholder="Добавьте описание">
+                <button class="parButton parbtn" style="margin-top: 14px">Опубликовать</button>
+              </form>
             </div>
         </div>
 
-        <div class="par3">
-            <div class="x">
+         <div class="par parmargin parwidth loadpar">
+            <div class="PaddingX">
                 <img src="./img/x.png" alt="">
             </div>
-            <div class="main">
-                <p style="font-size: 20px;">Изменить</p>
-               
-                <p style="padding: 27px 0 14px;">Название (обязательное поле)</p>
+            <div class="mainLoad">
+                <p class='ParTxt1 linkVideo' style="font-family: 'gilroyultra'; margin-bottom: 20px">Изменить</p>
+                <p class="ParTxt1 linkVideo" style="padding: 27px 0 14px; font-family: 'gilroyultra'">Название (обязательное поле)</p>
+                <form action="">
                 <input type="text" placeholder="Добавьте название">
-                <p style="padding: 14px 0;">Описание</p>
-                <input type="text" class="inp2" placeholder="Добавьте описание">
-                <button >Сохранить</button>
-              
+                <p style="padding: 14px 0; font-family: 'gilroyultra'" class="ParTxt1 linkVideo">Описание</p>
+                <input type="text" class="textArea" placeholder="Добавьте описание">
+                <button class="parButton parbtn" style="margin-top: 14px">Сохранить</button>
+              </form>
             </div>
         </div>
     </div>

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/comic.css">
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 
 <body>
@@ -22,40 +22,37 @@
         </ul>
         <img src="img/x.png" class='close'>
     </div>
-    <div class="wrapper">
+    <div class="wrapper wrapper1">
 
         <header>
-            <div class="container">
-                <div class="containerMain">
-                    <div class="header__logo">
-                        <a href="index.html">
-                            <span class="stand stand1">STAND UP</span> <br>
-                            <span class="concert">CONCERTS</span>
-                        </a>
-                    </div>
-                    <ul class="nav">
-                        <li class='DnoneLi'><a href="index.html">Главная</a></li>
-                        <li class='DnoneLi'><a href="catalog.html">Каталог</a></li>
-                        <li class='DnoneLi'><a href="#">Коллекции</a></li>
-                        <li class='searchdrop'>
-                            <img src="img/search.png" class="whiteimg" alt="">
-                            <img src="./img/searchred.png" class="redimg" alt="">
-                            <input type="search" class="class" placeholder="Поиск">
-                        </li>
-                    </ul>
-                    <a href="#" class="myCabinet"><span>Личный кабинет</span> <img class="DnoneImg"
-                            src="./img/lichni.png"></a>
-                    <div class="burger">
-                        <img src="img/rect1.png" alt="">
-                        <img src="img/rect1.png" alt="">
-                        <img src="img/rect2.png" alt="">
-                    </div>
-                </div>
+            <div class="header__logo">
+                <a href="index.html">
+                    <img src="./img/iconSite.png" alt="">
+                </a>
+            </div>
+            <ul class="nav">
+                <li class="willnone"><a href="./index.html">Главная</a></li>
+                <li class="willnone"><a href="./catalog.html">Каталог</a></li>
+                <li class="willnone"><a href="#">Коллекции</a></li>
+                <li class='searchdrop'>
+                    <img src="img/search.png" class="whiteimg" alt="">
+                    <img src="./img/searchred.png" class="redimg" alt="">
+                    <input type="search" class="class" placeholder="Поиск">
+                </li>
+            </ul>
+            <a href="#" class="myCabinet"><span>Личный кабинет</span> <img class="DnoneImg"
+                    src="./img/lichni.png"></a>
+            <div class="burger">
+                <img src="img/rect1.png" alt="">
+                <img src="img/rect1.png" alt="">
+                <img src="img/rect2.png" alt="">
             </div>
         </header>
+
+
     </div>
 
-    <section id="sec1">
+    <section id="Comicsec1">
         <div class="container">
             <p class="sec1Txt1">Stand Up Concerts/<span class="sec1Txt1_1">Комики</span></p>
             <div class="main">
@@ -64,14 +61,14 @@
                     <span>Назад</span>
                 </div>
                 <p class="contentName_1">Александр Иванов</p>
-                <div class="photoDiv">
+                <div class="ComicPhotoDiv">
                     <img src="./img/comic.png" alt="">
                 </div>
                 <div class="aboutComic">
                     <div class="contentDiv">
                         <p class="contentName">Александр Иванов</p>
-                        <p class="aboutTxt3">описание</p>
-                        <p class="aboutTxt4">А также представители современных социальных резервов объявлены нарушающими
+                        <p class="ComicAboutTxt3">описание</p>
+                        <p class="ComicAboutTxt4">А также представители современных социальных резервов объявлены нарушающими
                             общечеловеческие нормы этики и морали. А ещё представители современных социальных резервов
                             являются только методом политического участия и объявлены нарушающими общечеловеческие нормы
                             этики и морали. Повседневная практика показывает, что дальнейшее развитие различных форм
@@ -103,7 +100,7 @@
             <div class="container">
                 <p class="main2Txt">Все выступления</p>
                 <div class="allControlsPar">
-                    <div class="controlsPar">
+                    <div class="controlsPar" style="justify-content: flex-start; row-gap: 10px;">
                         <div class="controls">
                             <div class="firstPar">
                                 <p class="controlstxt">Все выступления</p>
@@ -148,7 +145,7 @@
         </div>
         <div class="container">
 
-            <div class="elementsPar">
+            <div style="padding-bottom: 107px;" class="elementsPar">
 
                 <a href="./catalogOpen.html">
 
@@ -214,8 +211,7 @@
             <div class="footer__container">
                 <div class="header__logo">
                     <a href="index.html">
-                        <span class="stand">STAND UP</span> <br>
-                        <span class="concert">CONCERTS</span>
+                        <img src="./img/iconSite.png" alt="">    
                     </a>
                 </div>
                 <ul class="nav">
@@ -232,8 +228,8 @@
         </div>
 
     </footer>
-    <script src="script/favorite.js"></script>
-    <script src="script/catalog.js"></script>
+    <script src="./script/favorite.js"></script>
+    <script src="./script/catalog.js"></script>
 </body>
 
 </html>

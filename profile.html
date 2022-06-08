@@ -1,111 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="css/profile.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="./style/style.css">
+
 </head>
+
 <body>
-  
-  <div class="burger__menu">
-    <h4>Мой профиль</h4>
-      <ul class="burger__ul">
-          <li><a href="#">Настройки</a></li>
-          <li><a href="#">Подписки</a></li>
-          <li><a href="#">Избранные выступления</a></li>
-          <li><a href="#">Любимые комики</a></li>
-        <li><a href="">Личный кабинет комика</a></li>
-      </ul>
-      <img src="img/x.png" class='close'>
-  </div>
-   <div class="wrapper">
-   
-    <header>
-        <div class="container">
-            <div class="containerMain">
-                <div class="header__logo">
-                    <a href="index.html">
-                        <span class="stand stand1">STAND UP</span> <br>
-                        <span class="concert">CONCERTS</span>
-                    </a>
-                </div>
-                <ul class="nav">
-                    <li class='DnoneLi'><a href="index.html" >Главная</a></li>
-                    <li class='DnoneLi'><a href="catalog.html">Каталог</a></li>
-                    <li class='DnoneLi'><a href="#">Коллекции</a></li>
-                    <li class='searchdrop'>
-                        <img src="img/search.png" class="whiteimg" alt="">
-                        <img src="./img/searchred.png" class="redimg"  alt="">
-                        <input type="search"  class="class" placeholder="Поиск">
-                        </li>
-                </ul>
-                <a href="#" class="myCabinet"><span>Личный кабинет</span> <img class="DnoneImg"
-                        src="./img/lichni.png"></a>
-                <div class="burger">
-                    <img src="img/rect1.png" alt="">
-                    <img src="img/rect1.png" alt="">
-                    <img src="img/rect2.png" alt="">
-                </div>
-            </div>
-        </div>
-    </header>
-    <div class="cabinetmain">
-    <div class="cabinet">
-       <div class="cabinet__content">
-        <p>Stand Up Concerts/Личный кабинет</p>
-        <h2>Личный кабинет</h2>
-        <ul class="cabinet__nav">
-            <li><a href="#" style="color: #FF6A63;">Профиль</a></li>
+
+    <div class="burger__menu">
+        <h4>Мой профиль</h4>
+        <ul class="burger__ul">
+            <li><a href="#">Настройки</a></li>
             <li><a href="emptyAdd1.html">Подписки</a></li>
             <li><a href="emptyAdd2.html">Избранные выступления</a></li>
             <li><a href="emptyAdd3.html">Любимые комики</a></li>
-            
-          <li><a href="emptyAdd4.html">Сохраненные видео</a></li>
+            <li><a href="comic.html">Личный кабинет комика</a></li>
+
         </ul>
+        <img src="img/x.png" class='close'>
+    </div>
+    <div class="wrapper wrapper1">
+
+        <header>
+            <div class="header__logo">
+                <a href="index.html">
+                    <img src="./img/iconSite.png" alt="">
+                </a>
+            </div>
+            <ul class="nav">
+                <li class="willnone"><a href="./index.html">Главная</a></li>
+                <li class="willnone"><a href="./catalog.html">Каталог</a></li>
+                <li class="willnone"><a href="#">Коллекции</a></li>
+                <li class='searchdrop'>
+                    <img src="img/search.png" class="whiteimg" alt="">
+                    <img src="./img/searchred.png" class="redimg" alt="">
+                    <input type="search" class="class" placeholder="Поиск">
+                </li>
+            </ul>
+            <a href="#" class="myCabinet"><span>Личный кабинет</span> <img class="DnoneImg"
+                    src="./img/lichni.png"></a>
+            <div class="burger">
+                <img src="img/rect1.png" alt="">
+                <img src="img/rect1.png" alt="">
+                <img src="img/rect2.png" alt="">
+            </div>
+        </header>
+    </div>
+    <div class="Profilecabinetmain">
+        <div class="cabinet padLeft">
+            <div class="cabinet__content cabinetPadleft">
+                <p class="sec1Txt1">Stand Up Concerts/<span class="sec1Txt1_1">Комики</span></p>
+                <h2>Личный кабинет</h2>
+                <ul class="cabinet__nav">
+                    <li><a href="#" style="color: #FF6A63;">Профиль</a></li>
+                    <li><a href="emptyAdd1.html">Подписки</a></li>
+                    <li><a href="emptyAdd2.html">Избранные выступления</a></li>
+                    <li><a href="emptyAdd3.html">Любимые комики</a></li>
+
+                    <li><a href="emptyAdd4.html">Сохраненные видео</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="cabinet__login logPadLeft">
+            <h2>Профиль</h2>
+            <p class="cabinetLoginTxt">ДАННЫЕ АККАУНТА</p>
+            <div class="info infoProf">
+                <p>E-mail</p>
+                <h4>ivan-ivanov@mail.ru</h4>
+                <p>Изменить e-mail</p>
+            </div>
+            <div class="info infoProf">
+                <p>Пароль</p>
+                <h4>••••••••••</h4>
+                <p>Изменить пароль</p>
+            </div>
+            <div class="for__btn">
+                <button>Выйти</button>
+            </div>
         </div>
     </div>
-    <div class="cabinet__login">
-        <h2>Профиль</h2>
-        <p>ДАННЫЕ АККАУНТА</p>
-        <div class="info">
-            <p>E-mail</p>
-            <p>Изменить e-mail</p>
-            <h4>ivan-ivanov@mail.ru</h4>
-        </div>
-        <div class="info">
-            <p>Пароль</p>
-            <p>Изменить пароль</p>
-            <h4>••••••••••</h4>
-        </div>
-        <div class="for__btn">
-        <button>Выйти</button>
-        </div>
-    </div>
-    </div>
-    </div>
-  <footer>
+    <footer>
         <div class="footer__container">
-        <div class="header__logo">
-            <a href="index.html">
-                <span class="stand">STAND UP</span> <br>
-                <span class="concert">CONCERTS</span>
+            <div class="header__logo">
+                <a href="index.html">
+                    <img src="./img/iconSite.png" alt="">
+                </a>
+            </div>
+            <ul class="nav">
+                <li><a href="#">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="#">Коллекции</a></li>
+            </ul>
+            <a href="#">
+                <div class="vk">
+                    <img src="img/vk.png" alt="">
+                </div>
             </a>
         </div>
-        <ul class="nav">
-            <li><a href="index.html" >Главная</a></li>
-            <li><a href="catalog.html">Каталог</a></li>
-            <li><a href="#">Коллекции</a></li>
-        </ul>
-        <a href="#">
-        <div class="vk">
-            <img src="img/vk.png" alt="">
-        </div>
-        </a>
-        </div>
     </footer>
-    
-    <script src=script/favorite.js></script>
+
+    <script src=./script/favorite.js></script>
 </body>
+
 </html>
