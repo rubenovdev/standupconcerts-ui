@@ -1,0 +1,42 @@
+.burger__menu {
+    display: block;
+    right: -10%;
+}
+
+.seeMore {
+    /* display: block; */
+    margin: auto;
+    width: auto;
+}
+
+.active {
+    color: #ff6a63!important;
+}
+
+.CabinetInfoTxt2 {
+    color: initial;
+}
+
+.header {
+    background-color: transparent;
+}
+
+.modal {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    margin: 0;
+}
+
+.parmargin {
+    /* position: absolute;
+    top: 50%;
+    left: 50%; */
+}
+
+.elBigTxt {
+    color: white;
+}
