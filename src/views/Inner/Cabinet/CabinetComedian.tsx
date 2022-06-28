@@ -1,9 +1,13 @@
+import { Helmet } from 'react-helmet'
 import { Outlet } from 'react-router'
 import { NavLink } from 'react-router-dom'
 
 export const CabinetComedianView = () => {
     return (
         <section id="Cabsec1">
+            <Helmet>
+                <title>Профиль</title>
+            </Helmet>
             <div className="containerAdds">
                 <div className="cabinetPar">
 

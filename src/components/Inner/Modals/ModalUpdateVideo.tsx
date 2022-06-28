@@ -1,6 +1,7 @@
 import { Form, Formik } from 'formik'
 import React from 'react'
 import { ConcertType } from '../../../types/concerts'
+import { CloseBtn } from '../../Common/UI/CloseBtn'
 
 type Props = {
     active: boolean
@@ -20,8 +21,9 @@ export const ModalUpdateVideo: React.FC<Props> = ({ active, setActive, onChange,
         active ?
             <div className="par parmargin parwidth loadpar modal">
                 <div className="PaddingX">
-                    <img src="./img/x.png" alt="" />
-                </div>
+                    <CloseBtn onClose={() => {
+                        setActive(false)
+                    }} />                </div>
                 <div className="mainLoad">
                     <p className='ParTxt1 linkVideo' style={{ fontFamily: 'gilroyultra', marginBottom: "20px" }}>Изменить</p>
                     <p className="ParTxt1 linkVideo" style={{

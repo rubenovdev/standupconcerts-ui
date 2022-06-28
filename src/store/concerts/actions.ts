@@ -53,6 +53,14 @@ export const concertsActions = {
     setCurrentConcertComments: (comments: Array<CommentType>) => ({
         type: `${type}/setCurrentConcertComments` as const,
         comments
+    }),
+    setProgressUploadConcert: (progressUploadConcert: number | null) => ({
+        type: `${type}/setProgressUploadConcert` as const,
+        progressUploadConcert
+    }),
+    setIndexConcerts: (concerts: Array<ConcertType>) => ({
+        type: `${type}/setIndexConcerts` as const,
+        concerts
     })
 }
 
@@ -66,7 +74,9 @@ export const createConcert = (dto: Partial<CreateConcertDto>): ThunkActionType =
 
     const fullDto = dto as CreateConcertDto
 
-    await concertsAPI.create(fullDto)
+    await concertsAPI.create(fullDto, (progress) => {
+        dispatch(concertsActions.setProgressUploadConcert(progress))
+    })
     dispatch(fetchCurrentUser())
 }
 
@@ -146,6 +156,14 @@ export const likeConcert = (concertId: number): ThunkActionType => async (dispat
     }
     await concertsAPI.like(concertId)
     dispatch(fetchConcert(concertId))
+}
+
+export const fetchIndexConcerts = (): ThunkActionType => async (dispatch) => {
+    const { data: { result } } = await concertsAPI.getAll({ limit: 8 })
+
+    if (result) {
+        dispatch(concertsActions.setIndexConcerts(result.concerts))
+    }
 }
 
 export type ConcertsActionsTypes = ReturnType<InferValueTypes<typeof concertsActions>>

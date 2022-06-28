@@ -14,12 +14,14 @@ export type GetConcertResponseType = {
     concert: ConcertType
 }
 
-export type GetConcertsFiltersType = {
-    comedianId: string
-    sortBy: string
-    year: string
-}
-
 export type GetCommentsType = {
     comments: Array<CommentType>
+}
+
+export type GetConcertsFiltersType = {
+    year: number | string | null
+    sortBy: number | string | null
+    comedianId: number | string | null
+    excludedId: number | string | null
+    limit: number | string | null
 }

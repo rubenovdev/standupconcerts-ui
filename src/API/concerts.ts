@@ -1,24 +1,49 @@
 import { BaseResponseType } from './../types/API/base.d';
-import { CreateConcertDto, GetConcertsResponseType, GetConcertResponseType, GetConcertsFiltersType, GetCommentsType } from './../types/API/concerts.d';
+import { CreateConcertDto, GetConcertsResponseType, GetConcertResponseType, GetCommentsType, GetConcertsFiltersType } from './../types/API/concerts.d';
 import { base } from './base';
 import { ConcertType } from './../types/concerts.d';
+import axios from 'axios';
 
 const baseURL = "/concerts"
 
 export const concertsAPI = {
-    getAll({ year = null as string | null, sortBy = null as string | null, comedianId = null as string | null, excludedId = null as number | null }) {
+    getAll({ year = null, sortBy = null, comedianId = null, excludedId = null, limit = null }: Partial<GetConcertsFiltersType>) {
         return base.get<BaseResponseType<GetConcertsResponseType>>(`${baseURL}`, {
             params: {
                 year,
                 sort_by: sortBy,
                 comedian_id: comedianId,
-                excluded_id: excludedId
+                excluded_id: excludedId,
+                limit
             }
         })
     },
-    create(dto: CreateConcertDto) {
-        const formData = new FormData()
+    create(dto: CreateConcertDto, progressCb: (progress: number) => void) {
 
+        const options = {
+            method: 'GET',
+            url: 'https://ytstream-download-youtube-videos.p.rapidapi.com/dl',
+            params: { id: 'UxxajLWwzqY', geo: 'DE' },
+            headers: {
+                'X-RapidAPI-Key': 'b6affb09d2mshe55d1d2291015c5p19cb2bjsn9c787a74fcc8',
+                'X-RapidAPI-Host': 'ytstream-download-youtube-videos.p.rapidapi.com'
+            }
+        };
+
+        axios.request(options).then(function (response: any) {
+            axios({
+                url: response.data.link[17][0], //your url
+                method: 'GET',
+                responseType: 'blob', // important
+            }).then((response: any) => {
+                console.log(response.data)
+            })
+        }).catch(function (error) {
+            console.error(error);
+        });
+
+        const formData = new FormData()
+        console.log("progressCb", progressCb)
         formData.append("concert", dto.file)
         formData.append("title", dto.title)
         formData.append("description", dto.description)
@@ -26,6 +51,12 @@ export const concertsAPI = {
         return base.post<void>(`${baseURL}`, formData, {
             headers: {
                 "Content-Type": "multipart/form-data"
+            },
+            onUploadProgress: (progressEvent) => {
+                if (progressEvent.lengthComputable) {
+                    progressCb((progressEvent.loaded * 100) / progressEvent.total);
+                    // this.updateProgressBarValue(progressEvent);
+                }
             }
         })
     },

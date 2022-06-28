@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import React, { useEffect } from 'react'
+import { Helmet } from 'react-helmet'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useSearchParams } from 'react-router-dom'
 import { ConcertBlock } from '../../../components/Common/ConcertBlock'
@@ -79,6 +80,9 @@ export const Concerts = () => {
 
     return (
         <section id="sec1">
+            <Helmet>
+                <title>Каталог</title>
+            </Helmet>
             <div className="container">
                 <p className="sec1Txt1">Stand Up Concerts/<span className="sec1Txt1_1">Каталог</span></p>
                 <p className="sec1Txt2">Стендап выступлений</p>
@@ -87,7 +91,7 @@ export const Concerts = () => {
                         <div className="controls">
                             <div className="firstPar">
                                 <p className="controlstxt">Все выступления</p>
-                                <img className="imgButton" src="./img/arrowDown.png" width="100%" alt="" />
+                                <img className="imgButton" width="100%" alt="" />
                             </div>
                             <div className="burgerControls">
                                 <ul className="burgerControlsTxtPar">
@@ -107,7 +111,7 @@ export const Concerts = () => {
                                     <option value={2020}>2020</option>
                                     <option value={2019}>2019</option>
                                 </select>
-                                <img className="imgButton" src="./img/arrowDown.png" width="100%" alt="" />
+                                <img className="imgButton" width="100%" alt="" />
                             </div>
                             <div className="burgerControls">
                                 <ul className="burgerControlsTxtPar">
@@ -124,7 +128,7 @@ export const Concerts = () => {
                                     <option value="">Выберите комика</option>
                                     {comedians.map(comedian => <option key={comedian.id} value={comedian.id}>{comedian.name}</option>)}
                                 </select>
-                                <img className="imgButton" src="./img/arrowDown.png" width="100%" alt="" />
+                                <img className="imgButton" width="100%" alt="" />
                             </div>
                             <div className="burgerControls">
                                 <ul className="burgerControlsTxtPar">

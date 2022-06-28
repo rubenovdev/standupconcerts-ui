@@ -5,6 +5,10 @@ import { RootStateType } from '../../store/rootReducer'
 import { Burger } from './UI/Burger'
 import { SiteLogo } from './UI/SiteLogo'
 
+const iconSearch = require("../../assets/img/search.png")
+const iconSearched = require("../../assets/img/searchred.png")
+const iconPrivate = require("../../assets/img/lichni.png")
+
 export const CommonHeader: React.FC = () => {
     const user = useSelector((state: RootStateType) => state.accountReducer.user)
 
@@ -16,8 +20,8 @@ export const CommonHeader: React.FC = () => {
                 <li className="willnone"><NavLink to="/catalog">Каталог</NavLink></li>
                 <li className="willnone"><a href="#">Коллекции</a></li>
                 <li className='searchdrop'>
-                    <img src="img/search.png" className="whiteimg" alt="" />
-                    <img src="./img/searchred.png" className="redimg" alt="" />
+                    <img src={iconSearch} className="whiteimg" alt="" />
+                    <img src={iconSearched} className="redimg" alt="" />
                     <input type="search" className="className" placeholder="Поиск" />
                 </li>
             </ul>
@@ -26,7 +30,7 @@ export const CommonHeader: React.FC = () => {
                 :
                 <>
                     <Link to="/cabinet" className="myCabinet"><span>Личный кабинет</span> <img className="DnoneImg"
-                        src="./img/lichni.png" /></Link>
+                        src={iconPrivate} /></Link>
                     <Burger />
                 </>
             }

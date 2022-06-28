@@ -1,10 +1,14 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import { Outlet, Routes } from 'react-router'
 import { NavLink } from 'react-router-dom'
 
 export const CabinetUserView = () => {
     return (
         <div className="Profilecabinetmain">
+            <Helmet>
+                <title>Профиль</title>
+            </Helmet>
             <div className="cabinet padLeft">
                 <div className="cabinet__content cabinetPadleft">
                     <p className="sec1Txt1">Stand Up Concerts/<span className="sec1Txt1_1">Комики</span></p>

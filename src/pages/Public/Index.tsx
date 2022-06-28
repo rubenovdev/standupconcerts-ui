@@ -1,45 +1,70 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { Helmet } from 'react-helmet'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-const firstHand = require("../../assets/img/hand1.png")
-const secondHand = require("../../assets/img/hand2.png")
-const thirdHand = require("../../assets/img/hand3.png")
+import { fetchIndexConcerts } from '../../store/concerts/actions'
+import { RootStateType } from '../../store/rootReducer'
+const iconFirstHand = require("../../assets/img/hand1.png")
+const iconSecondHand = require("../../assets/img/hand2.png")
+const iconThirdHand = require("../../assets/img/hand3.png")
 
+const iconRect3 = require("../../assets/img/rect3.png")
+const iconRect4 = require("../../assets/img/rect4.png")
+const iconRect5 = require("../../assets/img/rect5.png")
+const iconRect6 = require("../../assets/img/rect6.png")
+const iconRect7 = require("../../assets/img/rect7.png")
+const iconRect8 = require("../../assets/img/rect8.png")
+const iconLine = require("../../assets/img/Line.png")
+const iconArrow = require("../../assets/img/arrow.png")
 
 export const Index = () => {
+    const dispatch = useDispatch()
+    const concerts = useSelector((state: RootStateType) => state.concertsReducer.indexConcerts)
+    useEffect(() => {
+        dispatch<any>(fetchIndexConcerts())
+    }, [])
+
     return (
         <>
             <div className="wrapper__content">
+                <Helmet>
+                    <title>Главная</title>
+                </Helmet>
                 <h2 style={{ marginTop: "94px" }}>Смотрте <span>стендап</span> <br /> <span>Выступления</span> от любимых <br />
                     комиков по подписке</h2>
                 <p>Отменить подписку можно в любое время</p>
                 <div className="wrapper__rect">
-                    <img src="img/rect3.png" alt="" />
-                    <img src="img/rect4.png" alt="" />
-                    <img src="img/rect4.png" alt="" />
-                    <img src="img/rect4.png" alt="" />
-                    <img src="img/rect4.png" alt="" />
-                    <img src="img/rect4.png" alt="" />
-                    <img src="img/rect4.png" alt="" />
-                    <img src="img/rect4.png" alt="" />
-                    <img src="img/rect4.png" alt="" />
-                    <img src="img/rect4.png" alt="" />
-                    <img src="img/Line.png" alt="" />
-                    <img src="img/rect5.png" alt="" />
-                    <img src="img/rect6.png" alt="" />
-                    <img src="img/rect7.png" alt="" />
-                    <img src="img/rect8.png" alt="" />
+                    <img src={iconRect3} alt="" />
+                    <img src={iconRect4} alt="" />
+                    <img src={iconRect4} alt="" />
+                    <img src={iconRect4} alt="" />
+                    <img src={iconRect4} alt="" />
+                    <img src={iconRect4} alt="" />
+                    <img src={iconRect4} alt="" />
+                    <img src={iconRect4} alt="" />
+                    <img src={iconRect4} alt="" />
+                    <img src={iconRect4} alt="" />
+                    <img src={iconLine} alt="" />
+                    <img src={iconRect5} alt="" />
+                    <img src={iconRect6} alt="" />
+                    <img src={iconRect7} alt="" />
+                    <img src={iconRect8} alt="" />
                 </div>
                 <p style={{ marginTop: "27px", marginBottom: "55px" }}>Напишем на почту за 4 дня</p>
                 <button className="wrapper__button">попробовать 14 дней бесплатно</button>
                 <a className="seeMore" href="#indexSec">Узнайте подробнее</a>
-                <img src="img/arrow.png" alt="" style={{ display: "block", margin: "auto", cursor: "pointer" }} />
+                <img src={iconArrow} alt="" style={{ display: "block", margin: "auto", cursor: "pointer" }} />
             </div>
             <main>
                 <h2>Выбирайте и смотрите любимые <br /> <span>стендап выступления</span></h2>
                 <div className="main-items">
-                    <div className="main-item"><img src="img/person1.png" alt="person" />
-                        <p>Хороший год</p>
-                    </div>
+                    {concerts.map(concert => (
+                        <Link to={`/catalog/${concert.id}`}>
+                            <div className="main-item"><img src={`${process.env.REACT_APP_STORAGE}/${concert.frameSrc}`} alt="person" />
+                                <p>{concert.title}</p>
+                            </div>
+                        </Link>
+                    ))}
                 </div>
 
 
@@ -51,7 +76,7 @@ export const Index = () => {
                 <div className="section-items">
                     <div className="section-item">
                         <div className="section__div">
-                            <img src={thirdHand} alt="" />
+                            <img src={iconThirdHand} alt="" />
                         </div>
 
                         <h2>Загружайте сериалы <br /> для просмотра офлайн</h2>
@@ -60,14 +85,14 @@ export const Index = () => {
                     <div className="section-item">
                         <div className="section__div">
 
-                            <img src={secondHand} alt="/" />
+                            <img src={iconSecondHand} alt="/" />
                         </div>
                         <h2>Встроенные профили <br /> для разных пользователей</h2>
                         <p>для друзей или семьи -- смотрите стендап <br /> и выступления,разделяя один аккаунт</p>
                     </div>
                     <div className="section-item">
                         <div className="section__div">
-                            <img src={firstHand} alt="" />
+                            <img src={iconFirstHand} alt="" />
                         </div>
 
                         <h2>До 3 устройств <br /> на одном аккаунте</h2>

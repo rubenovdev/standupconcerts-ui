@@ -4,12 +4,11 @@ const iconClose = require("../../../assets/img/x.png")
 
 type PropsType = {
   onClose: () => void
+  classes?: string 
 }
 
-export const CloseBtn: React.FC<PropsType> = ({ onClose }) => {
+export const CloseBtn: React.FC<PropsType> = ({ classes, onClose }) => {
   return (
-    <div onClick={onClose}>
-      <img src={iconClose} alt="" />
-    </div>
+    <img onClick={onClose} className={classes} src={iconClose} alt="" />
   )
 }

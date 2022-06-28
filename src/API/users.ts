@@ -18,7 +18,6 @@ export const usersAPI = {
     },
     delete(id: number) {
         return base.delete<Array<UserType>>(`${baseURL}`)
-
     },
     currentUpdate(user: Partial<UserType>) {
         return base.put<Array<UserType>>(`${baseURL}/current`, JSON.stringify(user))
@@ -38,27 +37,32 @@ export const usersAPI = {
 
     },
     currentAppendFavoriteConcert(concertId: number) {
-        return base.put<Array<UserType>>(`${baseURL}/favorite-concerts/${concertId}`,)
+        return base.put<Array<UserType>>(`${baseURL}/current/favorite-concerts/${concertId}`,)
 
     },
     currentAppendSubscription(concertId: number) {
-        return base.put<Array<UserType>>(`${baseURL}/subscriptions/${concertId}`,)
+        return base.put<Array<UserType>>(`${baseURL}/current/subscriptions/${concertId}`,)
 
     },
     currentAppendFavoriteComedian(comedianId: number) {
-        return base.put<Array<UserType>>(`${baseURL}/favorite-comedians/${comedianId}`,)
+        return base.put<Array<UserType>>(`${baseURL}/current/favorite-comedians/${comedianId}`,)
 
     },
     currentDeleteFavoriteConcert(concertId: number) {
-        return base.delete<Array<UserType>>(`${baseURL}/favorite-concerts/${concertId}`,)
+        return base.delete<Array<UserType>>(`${baseURL}/current/favorite-concerts/${concertId}`,)
 
     },
     currentDeleteSubscription(concertId: number) {
-        return base.delete<Array<UserType>>(`${baseURL}/subscriptions/${concertId}`,)
+        return base.delete<Array<UserType>>(`${baseURL}/current/subscriptions/${concertId}`,)
 
     },
     curentDeleteFavoriteComedian(comedianId: number) {
-        return base.delete<Array<UserType>>(`${baseURL}/favorite-comedians/${comedianId}`,)
-
+        return base.delete<Array<UserType>>(`${baseURL}/current/favorite-comedians/${comedianId}`,)
+    },
+    like(id: number) {
+        return base.put<void>(`${baseURL}/${id}/like`)
+    },
+    dislike(id: number) {
+        return base.put<void>(`${baseURL}/${id}/dislike`)
     }
 }

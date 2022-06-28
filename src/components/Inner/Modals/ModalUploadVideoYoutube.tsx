@@ -1,5 +1,6 @@
 import { Formik } from 'formik'
 import React from 'react'
+import { CloseBtn } from '../../Common/UI/CloseBtn'
 
 type Props = {
     active: boolean,
@@ -13,8 +14,9 @@ export const ModalUploadVideoYoutube: React.FC<Props> = ({ setActive, fileUpload
 
             < div className="par parmargin parwidth modal">
                 <div className="PaddingX">
-                    < img src="./img/x.png" alt="" />
-                </div>
+                    <CloseBtn onClose={() => {
+                        setActive(false)
+                    }} />                </div>
                 <p className="ParTxt1 linkVideo" style={{ fontFamily: "gilroyultra" }}>Ссылка на видео</p>
                 <Formik
                     initialValues={{

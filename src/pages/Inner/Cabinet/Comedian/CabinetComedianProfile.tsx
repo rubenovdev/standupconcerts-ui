@@ -18,7 +18,7 @@ export const CabinetComedianProfile = () => {
                 <p>ДАННЫЕ АККАУНТА</p>
                 <div className="informationPar">
                     <div className="photo">
-                        <img src={"http://localhost:8080/" + user?.imgUrl} alt="" />
+                        <img src={`${process.env.REACT_APP_STORAGE}/${user?.imgUrl}`} alt="" />
                         <button onClick={() => setIsModalActive(true)}>Изменить фото</button>
                     </div>
                     <div className="mainInfo">

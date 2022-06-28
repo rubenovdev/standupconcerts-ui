@@ -11,9 +11,9 @@ export const ConcertBlock: React.FC<Props> = ({ concert }) => {
         <a href="./catalogOpen.html" key={concert.id}>
             <div className="elements">
                 <Link to={`/catalog/${concert.id}`}>
-                    <video width="253" preload="metadata">
-                        <source src={`http://localhost:8080/${concert.filepath}`} />
-                    </video>
+                    <img style={{
+                        height: "150px"
+                    }} src={`${process.env.REACT_APP_STORAGE}/${concert?.frameSrc}`} />
                     <p className="elBigTxt">{concert.title}</p>
                 </Link>
                 <div className="elSmallTxtPar">

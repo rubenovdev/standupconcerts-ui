@@ -38,11 +38,10 @@ function App() {
     dispatch<any>(fetchCurrentUser())
   }, [])
 
-  const state = useSelector((state: RootStateType) => state)
   const user = useSelector((state: RootStateType) => state.accountReducer.user)
   const isAppLoaded = useSelector((state: RootStateType) => state.appReducer.loaded)
 
-  const roles = selectCurrentUserRoles(state)
+  const roles = useSelector(selectCurrentUserRoles)
 
   return (
 

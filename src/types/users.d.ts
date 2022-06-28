@@ -8,10 +8,12 @@ export type UserType = {
 	about: string             
 	subscriptions: Array<ConcertType>
 	favoriteConcerts: Array<ConcertType> 
-	favoriteComedians: Array<ConcertType>
+	favoriteComedians: Array<UserType>
 	roles: Array<Role> 
 	createdAt: Date
 	concerts: Array<ConcertType>
+	likesCount: number
+	dislikesCount: number
 }
 
 export type Role = {

@@ -58,5 +58,25 @@ export const updateCurrentUserImage = (image: File): ThunkActionType => async (d
     dispatch(fetchCurrentUser())    
 }
 
+export const appendFavoriteConcert = (concertId: number): ThunkActionType => async (dispatch) => {
+    await usersAPI.currentAppendFavoriteConcert(concertId)
+    dispatch(fetchCurrentUser())
+}
+
+export const deleteFavoriteConcert = (concertId: number): ThunkActionType => async (dispatch) => {
+    await usersAPI.currentDeleteFavoriteConcert(concertId)
+    dispatch(fetchCurrentUser())
+}
+
+export const appendFavoriteComedian = (comedianId: number): ThunkActionType => async (dispatch) => {
+    await usersAPI.currentAppendFavoriteComedian(comedianId)
+    dispatch(fetchCurrentUser())
+}
+
+export const deleteFavoriteComedian = (comedianId: number): ThunkActionType => async (dispatch) => {
+    await usersAPI.curentDeleteFavoriteComedian(comedianId)
+    dispatch(fetchCurrentUser())
+}
+
 export type AccountActionsTypes = ReturnType<InferValueTypes<typeof accountActions>>
 type ThunkActionType = ThunkAction<void, RootStateType, unknown, any>

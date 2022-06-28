@@ -16,7 +16,9 @@ const initialState = {
         comedianId: "",
         year: "",
         sortBy: ""
-    }
+    },
+    progressUploadConcert: null as number | null,
+    indexConcerts: [] as Array<ConcertType>
 }
 
 export type ConcertsStateType = typeof initialState
@@ -99,6 +101,18 @@ export const concertsReducer = (state = initialState, action: ConcertsActionsTyp
             return {
                 ...state,
                 currentConcertComments: action.comments
+            }
+        }
+        case "concerts/setProgressUploadConcert": {
+            return {
+                ...state,
+                progressUploadConcert: action.progressUploadConcert
+            }
+        }
+        case "concerts/setIndexConcerts": {
+            return {
+                ...state,
+                indexConcerts: action.concerts
             }
         }
         default: {

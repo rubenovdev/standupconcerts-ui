@@ -38,9 +38,10 @@ export const CabinetComedianVideos = () => {
                 {user?.concerts && user.concerts.map((concert) =>
                 (
                     <div className="video" key={concert.id}>
-                        <video width="253" preload="metadata">
-                            <source src={`http://localhost:8080/${concert.filepath}`} />
-                        </video>
+                        <img style={{
+                            height: "150px"
+                        }} src={`${process.env.REACT_APP_STORAGE}/${concert?.frameSrc}`} />
+
                         <p className="videoName">{concert.title}</p>
                         <p className="videoViews">{concert.watchCount} просмотров <img src={iconLike} alt="" />{concert.likesCount}</p>
                         <button onClick={() => {
@@ -67,7 +68,7 @@ export const CabinetComedianVideos = () => {
                 dispatch<any>(fetchYoutubeVideo())
                 setIsModalUploadVideoYoutubeActive(false)
                 setIsModalSaveVideoActive(true)
-           }} />)}
+            }} />)}
             {portal(<ModalDeleteVideo active={isModalDeleteVideoActive} setActive={setIsModalDeleteVideoActive} onDelete={() => deletableConcertId && dispatch<any>(deleteConcert(deletableConcertId))} />)}
             {portal(<ModalSaveVideo active={isModalSaveVideoActive} setActive={setIsModalSaveVideoActive} onSubmit={(values: Partial<CreateConcertDto>) => dispatch<any>(createConcert(values))} />)}
             {editableConcert && portal(<ModalUpdateVideo active={isModalUpdateVideoActive} setActive={setIsModalUpdateVideoActive} onChange={(values: Partial<ConcertType>) => dispatch<any>(updateConcert(values))} concert={editableConcert} />)}

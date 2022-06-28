@@ -8,8 +8,7 @@ const iconClose = require("../../assets/img/x.png")
 
 export const Sidepanel = () => {
     const dispatch = useDispatch()
-    const state = useSelector((state: RootStateType) => state)
-    const roles = selectCurrentUserRoles(state)
+    const roles = useSelector(selectCurrentUserRoles)
 
 
     return (

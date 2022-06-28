@@ -1,3 +1,4 @@
+import { GoogleUser } from './../types/API/google.d';
 import { BaseResponseType } from './../types/API/base.d';
 import { base } from './base';
 import { SignUpDtoType, SignInDtoType, LoginResponseResultType } from './../types/API/auth.d';
@@ -10,7 +11,9 @@ export const authAPI = {
     },
     signUp(dto: SignUpDtoType) {
         return base.post<BaseResponseType>(`${baseURL}/sign-up`, JSON.stringify(dto))
-
+    },
+    authGoogle(dto: GoogleUser) {
+        return base.post<BaseResponseType<LoginResponseResultType>>(`${baseURL}/google`, JSON.stringify(dto))  
     },
     passwordRecovery(email: string) {
         return base.post<BaseResponseType>(`${baseURL}/password-recovery`, JSON.stringify({ email }))
