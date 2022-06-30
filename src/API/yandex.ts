@@ -1,23 +1,33 @@
+import { ResponseYandexUser, YandexUser } from './../types/API/yandex.d';
 import axios from "axios"
 
 export const yandexAPI = {
-    signIn() {
-        // const clientId = process.env.REACT_APP_YANDEX_CLIENT_ID
-        // const token = process.env.REACT_APP_YANDEX_TOKEN
+    redirect() {
+        const clientId = process.env.REACT_APP_YANDEX_CLIENT_ID
+        const redirectUri = window.location.protocol + "//" + window.location.host + "/" + process.env.REACT_APP_YANDEX_REDIRECT_URI
+        
+        if (!(clientId && redirectUri)) {
+            throw new Error("no client id found")
+        }
+        window.open(`https://oauth.yandex.ru/authorize?client_id=${clientId}&scope=&response_type=token&hauth.done=Yandex&redirect_uri=${redirectUri}`)
+    },
 
-        // window.open(`https://oauth.yandex.ru/authorize?client_id=${clientId}&scope=&response_type=token`)
-
-        // const query = window.location.search
-
-        axios.get("https://login.yandex.ru/info", {
+    async signIn(accessToken: string) {
+        const { data } = await axios.get<ResponseYandexUser>("http://localhost:8010/proxy/info", {
             headers: {
-                Authorization: "OAuth AQAAAAA6fk6FAAgCl2fuwqCm50rAkg8IY1fS8cg",
+                Authorization: `OAuth ${accessToken}`,
                 "Access-Control-Allow-Origin": "*",
                 "Content-Type": "application/json"
             }
-        }).catch(err => {
-            console.log(err)
         })
 
+        const user = {
+            email: data.default_email,
+            name: data.display_name,
+            id: data.id,
+            imgUrl: "https://avatars.yandex.net/get-yapic/${data.default_avatar_id}/islands-200"
+        } as YandexUser
+
+        return user
     }
 }

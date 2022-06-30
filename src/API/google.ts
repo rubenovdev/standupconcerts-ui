@@ -10,11 +10,11 @@ export const googleAPI = {
                     plugin_name: "chat"
                 }).signIn().then((user: any) => {
                     const userData = user.getBasicProfile()
-
                     resolve({
                         imgUrl: userData.getImageUrl(),
                         email: userData.getEmail(),
-                        name: userData.getName()
+                        name: userData.getName(),
+                        id: userData.getId()
                     })
                 }, (err: any) => {
                     reject(err)

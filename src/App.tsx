@@ -30,16 +30,21 @@ import { CabinetUserFavoriteConcerts } from "./pages/Inner/Cabinet/User/CabinetU
 import { Concerts } from "./pages/Public/Concerts/ConcertsAll";
 import { Concert } from "./pages/Public/Concerts/Concert";
 import { Comedian } from "./pages/Public/Comedian";
+import { VkAuth } from "./pages/Public/Auth/Socials/VkAuth";
+import { YandexAuth } from "./pages/Public/Auth/Socials/YandexAuth";
 function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    console.log("fetch current user")
     dispatch<any>(fetchCurrentUser())
   }, [])
 
   const user = useSelector((state: RootStateType) => state.accountReducer.user)
   const isAppLoaded = useSelector((state: RootStateType) => state.appReducer.loaded)
+
+  const redirectVkUri = process.env.REACT_APP_VK_REDIRECT_URI
+  const redirectYandexUri = process.env.REACT_APP_YANDEX_REDIRECT_URI
+
 
   const roles = useSelector(selectCurrentUserRoles)
 
@@ -57,6 +62,8 @@ function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/password-recovery" element={<PasswordRecovery />} />
                     <Route path="/registration" element={<Registration />} />
+                    <Route path={redirectVkUri} element={<VkAuth />} />
+                    <Route path={redirectYandexUri} element={<YandexAuth />} />
                   </>
                   :
                   <Route path="*" element={<Navigate to="/cabinet" replace />} />

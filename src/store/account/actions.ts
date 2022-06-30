@@ -25,7 +25,6 @@ export const fetchCurrentUser = (): ThunkActionType => async (dispatch) => {
         const { data } = await usersAPI.getCurrent()
 
         if (data.error) {
-            alert(data.error)
             return
         }
 

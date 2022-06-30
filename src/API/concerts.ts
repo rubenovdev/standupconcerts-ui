@@ -19,32 +19,15 @@ export const concertsAPI = {
         })
     },
     create(dto: CreateConcertDto, progressCb: (progress: number) => void) {
-
-        const options = {
-            method: 'GET',
-            url: 'https://ytstream-download-youtube-videos.p.rapidapi.com/dl',
-            params: { id: 'UxxajLWwzqY', geo: 'DE' },
-            headers: {
-                'X-RapidAPI-Key': 'b6affb09d2mshe55d1d2291015c5p19cb2bjsn9c787a74fcc8',
-                'X-RapidAPI-Host': 'ytstream-download-youtube-videos.p.rapidapi.com'
-            }
-        };
-
-        axios.request(options).then(function (response: any) {
-            axios({
-                url: response.data.link[17][0], //your url
-                method: 'GET',
-                responseType: 'blob', // important
-            }).then((response: any) => {
-                console.log(response.data)
-            })
-        }).catch(function (error) {
-            console.error(error);
-        });
-
         const formData = new FormData()
-        console.log("progressCb", progressCb)
-        formData.append("concert", dto.file)
+        if (dto.file) {
+            formData.append("concert", dto.file)
+        } else if (dto.youtubeVideoLink) {
+            formData.append("youtubeVideoLink", dto.youtubeVideoLink)
+        } else {
+            return
+        }
+
         formData.append("title", dto.title)
         formData.append("description", dto.description)
 

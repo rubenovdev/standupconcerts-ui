@@ -19,6 +19,5 @@ export const registration = (data: SignUpDtoType): ThunkActionType => async (dis
         await authAPI.signUp(data)
     } catch (e) {
         alert("Ошибка")
-        console.log(e)
     }
 }

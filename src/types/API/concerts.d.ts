@@ -1,9 +1,10 @@
 import { CommentType } from './../comments.d';
 import { ConcertType } from './../concerts.d';
 export type CreateConcertDto = {
-    file: File,
+    file?: File,
     title: string,
-    description: string
+    description: string,
+    youtubeVideoLink?: string
 }
 
 export type GetConcertsResponseType = {

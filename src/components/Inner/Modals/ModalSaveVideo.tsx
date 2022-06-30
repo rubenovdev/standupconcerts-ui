@@ -55,7 +55,9 @@ export const ModalSaveVideo: React.FC<Props> = ({ active, onSubmit, setActive })
                     >
                         {
                             ({ values, handleChange, submitForm }) => (
-                                <Form>
+                                <Form onSubmit={e => {
+                                    e.preventDefault()
+                                }}>
 
                                     <input type="text" placeholder="Добавьте название" value={values.title} onChange={handleChange} name="title" />
                                     <p style={{ padding: "14px 0", fontFamily: 'gilroyultra' }} className="ParTxt1 linkVideo">Описание</p>

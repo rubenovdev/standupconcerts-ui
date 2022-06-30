@@ -1,9 +1,9 @@
-import { Form, Formik, useFormik } from 'formik';
+import { Form, Formik } from 'formik';
 import React, { useState } from 'react'
 import { Helmet } from 'react-helmet';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { googleAuth, login, yandexAuth } from '../../../store/auth/login/actions';
+import { googleAuth, login, vkRedirect, yandexRedirect } from '../../../store/auth/login/actions';
 
 const vkIcon = require("../../../assets/img/vk.png")
 const googleIcon = require("../../../assets/img/google.png")
@@ -39,7 +39,7 @@ export const Login = () => {
               <input type={inputPasswordType} onChange={handleChange} value={values.password} name="password" placeholder="Пароль" minLength={6}
                 style={{ marginTop: "18px", marginBottom: "18px" }} id="pass" />
               <img src={eyeIcon} onClick={() => {
-                if (inputPasswordType == "password") {
+                if (inputPasswordType == "password") {                  
                   setInputPasswordType("text")
                 } else {
                   setInputPasswordType("password")
@@ -51,13 +51,15 @@ export const Login = () => {
             <p className="registerStand2">Или войдите с помощью социальных сетей</p>
             <div className="social">
               <a href="#">
-                <div className="vk">
+                <div className="vk" onClick={() => {
+                  dispatch<any>(vkRedirect())
+                }}>
                   <img src={vkIcon} alt="" />
                 </div>
               </a>
               <a href="#">
                 <div className="vk" onClick={() => {
-                  dispatch<any>(yandexAuth())
+                  dispatch<any>(yandexRedirect())
                 }}>
                   <img src={yandexIcon} alt="" />
                 </div>

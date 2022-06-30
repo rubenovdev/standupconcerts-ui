@@ -4,7 +4,7 @@ import { ModalUpdateVideo } from '../../../../components/Inner/Modals/ModalUpdat
 import { ModalDeleteVideo } from '../../../../components/Inner/Modals/ModalDeleteVideo'
 import { ModalSaveVideo } from '../../../../components/Inner/Modals/ModalSaveVideo'
 import { ModalUploadVideo } from '../../../../components/Inner/Modals/ModalUploadVideo'
-import { concertsActions, createConcert, deleteConcert, fetchYoutubeVideo, updateConcert } from '../../../../store/concerts/actions'
+import { concertsActions, createConcert, deleteConcert, updateConcert } from '../../../../store/concerts/actions'
 import { RootStateType } from '../../../../store/rootReducer'
 import { CreateConcertDto } from '../../../../types/API/concerts'
 import { ConcertType } from '../../../../types/concerts'
@@ -65,7 +65,7 @@ export const CabinetComedianVideos = () => {
                 setIsModalSaveVideoActive(true)
             }} />)}
             {portal(<ModalUploadVideoYoutube active={isModalUploadVideoYoutubeActive} setActive={setIsModalUploadVideoYoutubeActive} fileUpload={(link) => {
-                dispatch<any>(fetchYoutubeVideo())
+                dispatch<any>(concertsActions.setNewConcertYoutubeVideoLink(link))
                 setIsModalUploadVideoYoutubeActive(false)
                 setIsModalSaveVideoActive(true)
             }} />)}

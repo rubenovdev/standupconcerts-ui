@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CloseBtn } from '../../Common/UI/CloseBtn'
 
 type Props = {
@@ -8,6 +8,8 @@ type Props = {
 }
 
 export const ModalDeleteVideo: React.FC<Props> = ({ active, setActive, onDelete }) => {
+    const [isAccept, setIsAccept] = useState<boolean>(false)
+
     return (
 
         active ?
@@ -15,11 +17,15 @@ export const ModalDeleteVideo: React.FC<Props> = ({ active, setActive, onDelete 
                 <div className="PaddingX">
                     <CloseBtn onClose={() => {
                         setActive(false)
-                    }}/>
+                    }} />
                 </div>
                 <p className="ParTxt1">Удалить видео?</p>
-                <p className="ParTxt2 parCheck" style={{ padding: "14px 0 22px" }}><input type="checkbox" />Я понимаю, что отменить <br /> это действие нельзя</p>
+                <p className="ParTxt2 parCheck"  onClick={() => setIsAccept(!isAccept)} style={{ padding: "14px 0 22px" }}><input type="checkbox" value={isAccept ? "on" : ""} />Я понимаю, что отменить <br /> это действие нельзя</p>
                 <button onClick={() => {
+                    if (!isAccept) {
+                        return
+                    }
+
                     onDelete()
                     setActive(false)
                 }} className="parButton">Удалить видео</button>

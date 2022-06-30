@@ -9,7 +9,9 @@ const initialState = {
     currentConcert: null as ConcertType | null,
     otherConcers: [] as Array<ConcertType>,
     newConcert: {
-        file: null as File | null
+        file: null as File | null,
+        youtubeVideoLink: null as string | null
+
     },
     currentConcertComments: [] as Array<CommentType>,
     filtersConcerts: {
@@ -18,7 +20,7 @@ const initialState = {
         sortBy: ""
     },
     progressUploadConcert: null as number | null,
-    indexConcerts: [] as Array<ConcertType>
+    indexConcerts: [] as Array<ConcertType>,
 }
 
 export type ConcertsStateType = typeof initialState
@@ -113,6 +115,15 @@ export const concertsReducer = (state = initialState, action: ConcertsActionsTyp
             return {
                 ...state,
                 indexConcerts: action.concerts
+            }
+        }
+        case "concerts/setYoutubeVideoLink": {
+            return {
+                ...state,
+                newConcert: {
+                    ...state.newConcert,
+                    youtubeVideoLink: action.link
+                }
             }
         }
         default: {

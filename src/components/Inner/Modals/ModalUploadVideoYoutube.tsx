@@ -20,7 +20,7 @@ export const ModalUploadVideoYoutube: React.FC<Props> = ({ setActive, fileUpload
                 <p className="ParTxt1 linkVideo" style={{ fontFamily: "gilroyultra" }}>Ссылка на видео</p>
                 <Formik
                     initialValues={{
-                        link: "https://"
+                        link: ""
                     }}
                     onSubmit={(values) => fileUpload(values.link)}
                 >

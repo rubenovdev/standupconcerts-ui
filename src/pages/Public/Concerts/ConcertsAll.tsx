@@ -23,6 +23,7 @@ export const Concerts = () => {
     }, [filters.comedianId, filters.sortBy, filters.year])
 
     useEffect(() => {
+        
         const comedianId = searchParams.get("comedian_id")
         const year = searchParams.get("year")
         const sortBy = searchParams.get("sort_by")

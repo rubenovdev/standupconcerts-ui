@@ -1,6 +1,5 @@
 import { CommentType } from './../../types/comments.d';
-import { youtubeAPI } from './../../API/youtube';
-import { fetchCurrentUser, accountActions } from '../account/actions';
+import { fetchCurrentUser } from '../account/actions';
 import { CreateConcertDto } from '../../types/API/concerts';
 import { concertsAPI } from '../../API/concerts';
 import { ConcertType } from '../../types/concerts';
@@ -14,7 +13,7 @@ export const concertsActions = {
         type: `${type}/setConcerts` as const,
         concerts
     }),
-    setNewConcertFile: (file: File) => ({
+    setNewConcertFile: (file: File | null  ) => ({
         type: `${type}/setNewConcertFile` as const,
         file
     }),
@@ -61,23 +60,34 @@ export const concertsActions = {
     setIndexConcerts: (concerts: Array<ConcertType>) => ({
         type: `${type}/setIndexConcerts` as const,
         concerts
+    }),
+    setNewConcertYoutubeVideoLink: (link: string | null) => ({
+        type: `${type}/setYoutubeVideoLink` as const,
+        link
     })
 }
 
 export const createConcert = (dto: Partial<CreateConcertDto>): ThunkActionType => async (dispatch, getState) => {
     const file = getState().concertsReducer.newConcert.file
+    const youtubeLink = getState().concertsReducer.newConcert.youtubeVideoLink
 
-    if (!file) {
+    if (file) {
+        dto.file = file
+    } else if (youtubeLink) {
+        dto.youtubeVideoLink = youtubeLink
+    } else {
         return
     }
-    dto.file = file
 
     const fullDto = dto as CreateConcertDto
 
     await concertsAPI.create(fullDto, (progress) => {
         dispatch(concertsActions.setProgressUploadConcert(progress))
     })
+
     dispatch(fetchCurrentUser())
+    dispatch(concertsActions.setNewConcertFile(null))
+    dispatch(concertsActions.setNewConcertYoutubeVideoLink(null))
 }
 
 export const deleteConcert = (concertId: number): ThunkActionType => async (dispatch) => {
@@ -103,15 +113,10 @@ export const fetchConcerts = (): ThunkActionType => async (dispatch, getState) =
     }
 }
 
-export const fetchYoutubeVideo = (): ThunkActionType => async (dispatch) => {
-    await youtubeAPI.getVideo("44-Kx5ZZTsY")
-}
-
 export const fetchConcert = (id: number): ThunkActionType => async (dispatch) => {
     const { data: { result } } = await concertsAPI.get(id)
 
     if (result) {
-        console.log("result", result.concert)
         dispatch(concertsActions.setCurrentConcert(result.concert))
     }
 }

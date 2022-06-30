@@ -52,7 +52,6 @@ export const Concert = () => {
                             </div>
                         }
                         <video src={`${process.env.REACT_APP_STORAGE}/${concert?.videoSrc}`} ref={videoRef} hidden onLoadedMetadata={e => {
-                            console.log("fsdaf sdfsd")
                             videoRef.current && setVideoDuration(videoRef.current?.duration)
                         }}>
                         </video>

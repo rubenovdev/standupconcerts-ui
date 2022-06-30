@@ -12,7 +12,6 @@ type Props = {
 
 export const ModalUpdateVideo: React.FC<Props> = ({ active, setActive, onChange, concert }) => {
     const handleOnChange = (values: Partial<ConcertType>) => {
-        console.log(values)
         onChange(values)
         setActive(false)
     }

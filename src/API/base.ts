@@ -1,8 +1,6 @@
 import { getCookie } from './../utils/cookie';
 import axios from "axios"
 
-console.log(process.env)
-
 export const base = axios.create({
     baseURL: process.env.REACT_APP_API || "http://localhost:8080",
     headers: {
@@ -13,7 +11,6 @@ export const base = axios.create({
 
 base.interceptors.request.use(config => {
     const jwt = getCookie("jwt")
-    console.log(jwt && config)
     if (jwt && config.headers) {
         config.headers.Authorization = "Bearer " + jwt
     }

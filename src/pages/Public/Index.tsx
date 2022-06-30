@@ -52,8 +52,9 @@ export const Index = () => {
                 </div>
                 <p style={{ marginTop: "27px", marginBottom: "55px" }}>Напишем на почту за 4 дня</p>
                 <button className="wrapper__button">попробовать 14 дней бесплатно</button>
-                <a className="seeMore" href="#indexSec">Узнайте подробнее</a>
-                <img src={iconArrow} alt="" style={{ display: "block", margin: "auto", cursor: "pointer" }} />
+                <a className="seeMore" href="#indexSec">Узнайте подробнее
+                    <img src={iconArrow} alt="" style={{ display: "block", margin: "auto", cursor: "pointer" }} /></a>
+
             </div>
             <main>
                 <h2>Выбирайте и смотрите любимые <br /> <span>стендап выступления</span></h2>
