@@ -178,7 +178,6 @@ body {
     background-blend-mode: multiply;
     background-color: rgba(0, 0, 0, 0.7);
     padding-top: 17px;
-    padding-bottom: 40px;
 }
 
 .wrapper1 {
@@ -945,7 +944,6 @@ footer a {
 .elementsPar {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     padding-top: 51px;
     row-gap: 24px;
 }
@@ -955,6 +953,7 @@ footer a {
     /* border-radius: 10px; */
     color: white;
     overflow: hidden;
+    margin-right: 10px;
 }
 
 .elBigTxt {
@@ -1545,7 +1544,7 @@ footer a {
 
 .info {
     margin-top: 12px;
-    width: 668px;
+    width: 868px;
     height: 50px;
     border-radius: 5px;
     background: #2B2D30;
@@ -1651,6 +1650,7 @@ footer a {
 }
 
 .CabinetInfoTxt1 {
+    width: 100px;
     color: #959697;
 }
 

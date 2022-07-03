@@ -1,37 +1,22 @@
 import React from 'react'
+import "./style.css"
+
+let count = 0;
 
 export const CabinetUserSubscriptions = () => {
     return (
-        <div className="cabinet__login">
+        <div className="cabinet__login cabinet__login_test">
             <h2>Подписки</h2>
-            <p className="txt1">Список купленных выступлений</p>
-            <div className="infoPar">
-
+            <p className='header'>Статус подписки</p>
+            <div className='wrapSub'>
                 <div>
-                    <div className="info1">
-                    </div>
-                    <p className="cabTxt1">Название выступления...</p>
-                    <p className="cabTxt2">2019</p>
-                </div>
-                <div>
-                    <div className="info1">
-                    </div>
-                    <p className="cabTxt1">Название выступления...</p>
-                    <p className="cabTxt2">2019</p>
-                </div>
-                <div className="DnoneDiv">
-                    <div className="DnoneDiv info1">
-                    </div>
-                    <p className="cabTxt1">Название выступления...</p>
-                    <p className="cabTxt2">2019</p>
-                </div>
-                <div className="DnoneDiv">
-                    <div className="info1 DnoneDiv">
-                    </div>
-                    <p className="cabTxt1">Название выступления...</p>
-                    <p className="cabTxt2">2019</p>
+                    <p className='textSub1'>Подписка оплачена до:</p>
+                    <p className='textSub2'>15.07.2022</p>
                 </div>
             </div>
-
+            <div>
+                <button className="buttonSuns">Продлить подписку</button>
+                <button className="buttonSuns">Отменить подписку</button>
+            </div>
         </div>)
 }

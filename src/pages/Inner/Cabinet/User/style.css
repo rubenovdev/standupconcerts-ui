@@ -1,0 +1,67 @@
+.header {
+  padding: 14px 0 6px;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.wrapSub {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 248px;
+  height: 100px;
+  left: 639px;
+  top: 283px;
+  
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid #363636;
+  border-radius: 2px;
+}
+
+.textSub1 {
+  font-family: 'Graphik';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 140%;
+  /* identical to box height, or 17px */
+  
+  text-align: center;
+  
+  color: #FFFFFF;
+  
+  opacity: 0.5;
+}
+
+.textSub2 {
+  font-family: 'Graphik';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 26px;
+text-align: center;
+
+color: #FFFFFF;
+}
+
+.cabinet__login_test {
+    flex-direction: column !important;
+}
+
+.buttonSuns {
+  width: 182px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  margin-top: 14px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background-color: #D12F27;
+  color: white;
+  font-size: 16px;
+}

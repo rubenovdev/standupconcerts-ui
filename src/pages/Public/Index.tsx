@@ -30,7 +30,7 @@ export const Index = () => {
                 <Helmet>
                     <title>Главная</title>
                 </Helmet>
-                <h2 style={{ marginTop: "94px" }}>Смотрте <span>стендап</span> <br /> <span>Выступления</span> от любимых <br />
+                <h2 style={{ marginTop: "94px" }}>Смотрите <span>стендап</span> <br /> <span>Выступления</span> от любимых <br />
                     комиков по подписке</h2>
                 <p>Отменить подписку можно в любое время</p>
                 <div className="wrapper__rect">
